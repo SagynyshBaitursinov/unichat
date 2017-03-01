@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+    
+   	<bean id="entityManagerFactoryBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+      <property name="dataSource" ref="dataSource" />
+      <property name="packagesToScan" value="kz.codingwolves.unichat.models" />
+      <property name="jpaVendorAdapter">
+         <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+      </property>
+      <property name="jpaProperties">
+         <props>
+            <prop key="hibernate.hbm2ddl.auto">update</prop>
+            <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+         </props>
+      </property>
+   </bean>
+   
+   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="org.postgresql.Driver" />
+      <property name="url" value="jdbc:postgresql://localhost/unichat" />
+      <property name="username" value="postgres" />
+      <property name="password" value="postgres" />
+   </bean>
+	
+   <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+   		<property name="entityManagerFactory" ref="entityManagerFactoryBean" />
+   </bean>
+   
+   <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+   		<property name="host"><value>smtp.gmail.com</value></property>
+		<property name="port"><value>587</value></property>
+		<property name="protocol"><value>smtp</value></property>
+		<property name="username"><value>unichat.nu@gmail.com</value></property>
+		<property name="password"><value>youaremessi</value></property>
+		<property name="javaMailProperties">
+		<props>
+			<prop key="mail.smtp.auth">true</prop>
+			<prop key="mail.smtp.starttls.enable">true</prop>
+			<prop key="mail.smtp.quitwait">false</prop>
+		</props>
+		</property>
+   </bean>
+   
+   <bean id="mailSender2" class="org.springframework.mail.javamail.JavaMailSenderImpl" parent="mailSender">
+		<property name="username"><value>unichat.nu2@gmail.com</value></property>
+   </bean>
+   
+   <bean id="mailSender3" class="org.springframework.mail.javamail.JavaMailSenderImpl" parent="mailSender">
+		<property name="username"><value>admnunichat.nu@gmail.com</value></property>
+   </bean>
+    
+	<context:component-scan base-package="kz.codingwolves.unichat">
+		<context:exclude-filter type="assignable" expression="kz.codingwolves.unichat.controllers.HomeController"/>
+		<context:exclude-filter type="assignable" expression="kz.codingwolves.unichat.controllers.AdminController"/>		
+	</context:component-scan>
+	
+	<tx:annotation-driven />
+</beans>

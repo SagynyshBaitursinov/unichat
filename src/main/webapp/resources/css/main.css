@@ -1,0 +1,457 @@
+@font-face {
+    font-family: 'Wisdom Script';
+    src: url("../fonts/Wisdom Script AJ.otf");
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url("../fonts/bariol_regular-webfont.ttf");
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url("../fonts/Pacifico.ttf");
+}
+
+#dive{
+	margin-bottom:15px; 
+	width: 93%;
+	background: #38C36B;
+	color: #232A30;
+	border: none;
+	font-weight: bold;
+}
+#registerButton{
+	margin-bottom:15px; 
+	width: 93%;
+	background: #38C36B;
+	color: #232A30;
+	border: none;
+	font-weight: bold;
+}
+
+body, html {
+	margin: 0;
+	height: 100%;
+}
+
+#background {
+	margin: 0;
+	height: 100%;
+	background-color: #232A30;
+}
+
+#label {
+	font-family: Wisdom Script;
+	font-size: 1300%;
+	text-align: center;
+    color: #38C36B;
+
+}
+
+#emailicon {
+	text-align: right;
+    color: #38C36B;
+}
+
+.glyphicon {
+	font-size: 30px;
+}
+
+.toast {
+  opacity: 0.95 !important;
+}
+
+#toast-container > div {
+  opacity: 0.95 !important; 
+}
+
+/*input*/
+input[type=email] {
+	box-shadow: 0 0 0px 1000px #232A30 inset !important;
+	box-shadow: none;
+    border: none;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #38C36B;
+    background: transparent;
+    width: 93%;
+    height: 50px;
+    float: left;
+    -webkit-text-fill-color: #9f9f9f !important;
+    color: #9f9f9f !important;
+    /*styling input text*/
+    text-align: center;
+    font-size: 170%;
+    font-family: Helvetica;
+    font-style: normal;
+}
+
+
+/*input*/
+input[type=password] {
+	box-shadow: 0 0 0px 1000px #232A30 inset !important;
+    border: none;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #38C36B;
+    background: transparent;
+    width: 93%;
+    height: 50px;
+    float: left;
+    color: #9f9f9f;
+    /*styling input text*/
+    -webkit-text-fill-color: #9f9f9f !important;
+    text-align: center;
+    font-size: 170%;
+    font-family: Helvetica;
+    font-style: normal;
+}
+
+/*vertical centering of main content*/
+.main-content {
+	position: relative;
+
+	/*adjusted content height to fit other input fields*/
+	top: 40%;
+	transform: translateY(-200px);
+}
+
+/*vertically centering elements inside inputrow*/
+.emailicon, .emailinput, .emaildummy
+{
+	position: relative;
+    transform: translateY(20%);
+    /*border: 1px solid red;*/
+}
+
+.emailcol {
+	/*border: 1px solid red;*/
+}
+
+.forgot {
+	font-family: Helvetica;
+	text-align: center;
+    color:  #38C36B;
+	font-size: 150%;
+    font-size: medium;
+    font-style: italic;
+}
+.forgot:hover {
+    color:  #38C36B;
+}
+
+
+/*remove input highlight*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/*media queries*/
+
+@media only screen
+and (min-device-width : 10px)
+and (max-device-width : 992px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+    
+
+    input[type=email] {
+    	width: 100%;
+    	height: 10%;
+	}
+	
+    input[type=password] {
+    	width: 100%;
+    	height: 10%;
+	}
+
+	#emailinput {
+		font-size: 200%;
+	}
+
+	.forgot {
+		font-size: 300%;
+	}
+
+	
+
+}
+
+/*media queries*/
+
+/*phones portrait*/
+
+
+/*Very small*/
+@media only screen
+and (min-device-width : 220px)
+and (orientation: portrait) {
+
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 84%;
+    }
+
+    #label {
+        font-size: 300%;
+    }
+}
+
+/*Galaxy s2 plus*/
+@media only screen
+and (min-device-width : 320px)
+and (orientation: portrait) {
+
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 84%;
+    }
+
+    #label {
+        font-size:1200%;
+    }
+}
+
+/*Galaxy s2 plus*/
+@media only screen
+and (max-device-width : 320px)
+and (orientation: portrait) {
+
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 84%;
+    }
+
+    #label {
+        font-size:500%;
+    }
+}
+
+
+
+/*iPhone 4*/
+@media only screen
+and (min-device-width : 360px)
+and (max-device-height: 480px)
+and (orientation: portrait) {
+
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 84%;
+    }
+
+    #label {
+        font-size: 500%;
+    }
+
+}
+
+/*iPhone 4*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-height: 480px)
+and (orientation: portrait) {
+
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 84%;
+    }
+
+    #label {
+    	margin-top: 10%;
+        font-size: 500%;
+    }
+    .forgot {
+		font-size: 80%;
+	}
+	
+	/*input*/
+	input[type=email] {
+	    font-size: 70%;
+	}
+
+	input[type=password] {
+	    font-size: 70%;
+	}
+}
+
+
+
+/*iPhone 5 */
+/*note that some of screen space may take browser*/
+@media only screen
+and (min-device-width : 320px)
+and (min-device-height : 568px)
+and (orientation : portrait) {
+
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 87%;
+    }
+
+    .modalbody {
+        height: 330px;
+    }
+
+    #label {
+        font-size: 600%;
+    }
+	
+	/*input*/
+	input[type=email] {
+	    font-size: 70%;
+	}
+	input[type=password] {
+	    font-size: 70%;
+	}
+	.forgot {
+		font-size: 80%;
+	}
+}
+
+/*Nexus 5, Lumia 950, Galaxy s3 and etc.*/
+@media only screen
+and (min-device-width : 360px)
+and (max-device-width : 384px)
+and (orientation : portrait) {
+
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 88%;
+    }
+
+    .chatboxpanelbody p, strong, small {
+        font-size: 95%;
+    }
+
+    .modalbody {
+        height: 360px;
+    }
+    #label {
+        font-size: 600%;
+    }
+	
+	/*input*/
+	input[type=email] {
+	    font-size: 50%;
+	}
+	input[type=password] {
+	    font-size: 50%;
+	}
+	.forgot {
+		font-size: 80%;
+	}
+
+}
+
+
+/*iPhone 6*/
+@media only screen
+and (min-device-width : 375px)
+and (min-device-height : 640px)
+and (orientation : portrait) {
+
+    
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 89%;
+    }
+
+    .chatboxpanelbody p, strong, small {
+        font-size: 100%;
+    }
+
+    .modalbody {
+        height: 390px;
+    }
+
+}
+
+
+
+/*iPhone 6+, Nexus6, myphone*/
+@media only screen
+and (min-device-width : 412px)
+and (min-device-height : 732px)
+and (orientation : portrait) {
+
+    .chatbox, .chatboxrow, .chatboxcol, .chatboxpanel{
+        height: 90%;
+    }
+
+    .chatboxpanelbody p, strong, small {
+        font-size: 90%;
+    }
+
+    .modalbody {
+        height: 420px;
+    }
+
+    #label {
+        font-size: 800%;
+    }
+
+
+	.forgot {
+		font-size: 80%;
+	}
+}
+
+
+
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
+    .sendbutton {
+        position: relative;
+    }
+
+    .directinfoname {
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+    .directinfoother {
+        font-size: 100%;
+    }
+
+    .modalbody {
+        height: 500px;
+    }
+
+	.forgot {
+		font-size: 80%;
+	}
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+
+
+
+
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+
+
+
+
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+    #label {
+        font-size: 400%;
+    }
+	
+	#dive{
+		width: 100%;
+	}
+	#registerButton{
+		width: 100%;
+	}
+}

@@ -1,0 +1,97 @@
+#logo{
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
+ 	font-weight:bold;
+ 	font-size:71px;
+ 	margin-top:120px;
+	
+}
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+/* 
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px); */
+}
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+#emailConfirmed {
+    color: rgba(68,200,255,1);;
+}
+#icon-pass {
+    color: rgba(255,255,255,255);
+}
+#emailNotConfirmed {
+    color: white;
+}
+.input-group-addon{
+	background-color:#000005;
+}
+.spinner{
+    color: rgba(0,0,0,1);	
+    float: right;
+    margin-right: 18px;
+    margin-top: -35px;
+    position: relative;
+    z-index: 2;
+}
+#email{
+	height:55px;
+}
+
+.form-control:focus{
+	border-color: rgba(0,0,0,0.5);
+  	outline: 0;
+  	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(100,100,100,.6);
+ 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(100,100,100,.6);
+
+} 
+.has-error .form-control:focus{
+	box-shadow: none; -webkit-box-shadow: none;
+}
+#password-input {
+	height: 55px;
+}
+#dive {
+	height:60px;
+	background-color:#000005;
+	color:white/* rgba(68,200,255,1) */;
+	border-color: #4A5763;
+	font-weight: bold;	
+}
+#registerButton {
+	height:60px;
+	background-color:#000005;
+	color:white/* rgba(68,200,255,1) */;
+	border-color: #4A5763;
+	font-weight: bold;	
+}
+#registerButton {
+	height:60px
+}
+#img
+{
+	  z-index: 9999;
+	
+    height: 360px;
+    display: block;/* 
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; */
+}
+body{
+	overflow-y:hidden;
+}

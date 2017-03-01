@@ -1,0 +1,32 @@
+<b:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    	
+    <http use-expressions="true" auto-config="true">
+    	<intercept-url pattern="/getlastmessages" access="hasRole('ROLE_USER')"/>
+    	<intercept-url pattern="/getAvatar" access="hasRole('ROLE_USER')"/>
+    	<intercept-url pattern="/getInfo" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/chat/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/roulette/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/settings/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/changename/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/forgot/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/changegender/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/adduser/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/unipins/**" access="hasRole('ROLE_USER')" />
+        <form-login login-processing-url="/j_spring_security_check" login-page="/" authentication-failure-handler-ref="customAuthenticationFailureHandler" authentication-success-handler-ref="customAuthenticationSuccessHandler"/>
+        <logout logout-url="/logout" logout-success-url="/"/>
+        <csrf disabled="true" />
+    </http>
+    
+    <b:bean id="customAuthenticationSuccessHandler" class="kz.codingwolves.unichat.CustomAuthenticationSuccessHandler"/>
+    <b:bean id="customAuthenticationFailureHandler" class="kz.codingwolves.unichat.CustomAuthenticationFailureHandler"/>
+ 	<b:bean id="authProvider" class="kz.codingwolves.unichat.CustomAuthenticationProvider"/>
+ 	
+ 	<authentication-manager>
+        <authentication-provider ref="authProvider"/>
+    </authentication-manager>
+</b:beans>
